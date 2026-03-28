@@ -5,6 +5,7 @@ const storageKey = "pk-portfolio-theme";
 function applyTheme(theme) {
   root.dataset.theme = theme;
   toggle.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+  toggle.setAttribute("aria-pressed", String(theme === "dark"));
 }
 
 const savedTheme = localStorage.getItem(storageKey);
