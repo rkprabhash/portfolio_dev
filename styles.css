@@ -1,34 +1,34 @@
 :root {
-  --bg: #f7f0e7;
-  --bg-strong: rgba(255, 248, 240, 0.82);
-  --surface: #fffaf4;
-  --surface-alt: #f5eadc;
-  --text: #1b140f;
-  --muted: #655749;
-  --line: rgba(74, 53, 31, 0.12);
-  --accent: #bc5a2b;
-  --accent-strong: #8d3717;
-  --secondary: #175f68;
-  --secondary-strong: #0d434b;
-  --secondary-soft: rgba(23, 95, 104, 0.12);
-  --accent-soft: rgba(188, 90, 43, 0.12);
-  --shadow: 0 26px 90px rgba(78, 47, 19, 0.12);
+  --bg: #edf4fb;
+  --bg-strong: rgba(248, 252, 255, 0.84);
+  --surface: #f9fcff;
+  --surface-alt: #e7f0fa;
+  --text: #102033;
+  --muted: #5e6f82;
+  --line: rgba(42, 78, 115, 0.12);
+  --accent: #1f7ae0;
+  --accent-strong: #165db0;
+  --secondary: #0b7c73;
+  --secondary-strong: #095951;
+  --secondary-soft: rgba(11, 124, 115, 0.12);
+  --accent-soft: rgba(31, 122, 224, 0.12);
+  --shadow: 0 26px 90px rgba(39, 76, 120, 0.12);
 }
 
 body[data-theme="dark"] {
-  --bg: #0b1018;
-  --bg-strong: rgba(17, 25, 38, 0.8);
-  --surface: #121b29;
-  --surface-alt: #0f1622;
+  --bg: #08111d;
+  --bg-strong: rgba(14, 25, 40, 0.84);
+  --surface: #101b2b;
+  --surface-alt: #0d1826;
   --text: #edf4ff;
-  --muted: #9aacc1;
-  --line: rgba(161, 184, 214, 0.14);
-  --accent: #ff9457;
-  --accent-strong: #ffbc93;
-  --secondary: #69dad0;
-  --secondary-strong: #8ff1e8;
-  --secondary-soft: rgba(105, 218, 208, 0.12);
-  --accent-soft: rgba(255, 148, 87, 0.12);
+  --muted: #9db0c7;
+  --line: rgba(148, 177, 210, 0.14);
+  --accent: #53a4ff;
+  --accent-strong: #87c4ff;
+  --secondary: #4fe0d0;
+  --secondary-strong: #86f5e8;
+  --secondary-soft: rgba(79, 224, 208, 0.12);
+  --accent-soft: rgba(83, 164, 255, 0.14);
   --shadow: 0 30px 100px rgba(0, 0, 0, 0.38);
 }
 
@@ -43,7 +43,7 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  font-family: "Outfit", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   color: var(--text);
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--bg) 95%, #000 5%) 0%, var(--bg) 100%);
@@ -72,7 +72,7 @@ a {
   width: 34rem;
   height: 34rem;
   border-radius: 50%;
-  background: var(--accent-soft);
+  background: color-mix(in srgb, var(--accent-soft) 86%, white 14%);
 }
 
 .orb-two {
@@ -80,7 +80,7 @@ a {
   width: 30rem;
   height: 30rem;
   border-radius: 50%;
-  background: var(--secondary-soft);
+  background: color-mix(in srgb, var(--secondary-soft) 86%, white 14%);
 }
 
 .grain {
@@ -275,24 +275,26 @@ ul {
 
 h1,
 h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 600;
-  line-height: 0.95;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  line-height: 1.02;
 }
 
 h1 {
-  font-size: clamp(3.6rem, 7vw, 6.4rem);
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
   margin-bottom: 18px;
-  max-width: 11ch;
+  max-width: 12ch;
+  letter-spacing: -0.04em;
 }
 
 h2 {
-  font-size: clamp(2.1rem, 4vw, 3.5rem);
-  max-width: 12ch;
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  max-width: 13ch;
+  letter-spacing: -0.03em;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.08rem;
   margin-bottom: 10px;
 }
 
@@ -302,7 +304,8 @@ h3 {
 .timeline-summary,
 .strip-card p {
   color: var(--muted);
-  line-height: 1.82;
+  line-height: 1.74;
+  font-size: 0.98rem;
 }
 
 .hero-actions {
@@ -323,6 +326,47 @@ h3 {
   border-radius: 999px;
   border: 1px solid var(--line);
   background: color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+.hero-dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.dashboard-card {
+  padding: 16px;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 92%, transparent), color-mix(in srgb, var(--surface-alt) 74%, transparent));
+}
+
+.dashboard-wide {
+  grid-column: span 2;
+}
+
+.dashboard-kicker {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.dashboard-card strong {
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.dashboard-card small {
+  display: block;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .hero-spotlight {
@@ -359,7 +403,7 @@ h3 {
 .score {
   display: block;
   margin-bottom: 6px;
-  font-size: 1.8rem;
+  font-size: 1.55rem;
   font-weight: 800;
   color: var(--text);
 }
@@ -424,7 +468,7 @@ h3 {
   gap: 8px;
   color: var(--muted);
   margin-bottom: 12px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .date {
@@ -469,6 +513,29 @@ h3 {
 .credential-block span {
   color: var(--accent);
   font-weight: 700;
+}
+
+.project-card,
+.highlight-card,
+.value-card,
+.timeline-item,
+.credentials-panel,
+.skill-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::after,
+.highlight-card::after,
+.value-card::after,
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--secondary));
+  opacity: 0.7;
 }
 
 .contact-card {
@@ -537,6 +604,14 @@ h3 {
 
   .score-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-wide {
+    grid-column: span 1;
   }
 
   h1 {
