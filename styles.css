@@ -250,6 +250,23 @@ a {
 
 .hero-copy {
   padding: 42px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-copy::before {
+  content: "";
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  width: 180px;
+  height: 120px;
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, transparent 0 76%, color-mix(in srgb, var(--accent) 34%, transparent) 76% 79%, transparent 79% 100%),
+    linear-gradient(90deg, transparent 0 18%, color-mix(in srgb, var(--line) 90%, transparent) 18% 19%, transparent 19% 39%, color-mix(in srgb, var(--line) 90%, transparent) 39% 40%, transparent 40% 60%, color-mix(in srgb, var(--line) 90%, transparent) 60% 61%, transparent 61% 81%, color-mix(in srgb, var(--line) 90%, transparent) 81% 82%, transparent 82% 100%),
+    linear-gradient(135deg, color-mix(in srgb, var(--secondary-soft) 70%, transparent), transparent);
+  opacity: 0.75;
 }
 
 .eyebrow,
@@ -281,10 +298,10 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-size: clamp(1.85rem, 2.4vw, 2.35rem);
   margin-bottom: 18px;
-  max-width: 12ch;
-  letter-spacing: -0.04em;
+  max-width: 22ch;
+  letter-spacing: -0.02em;
 }
 
 h2 {
@@ -328,6 +345,35 @@ h3 {
   background: color-mix(in srgb, var(--surface) 88%, transparent);
 }
 
+.kpi-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.kpi-pill {
+  min-width: 120px;
+  padding: 10px 14px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 94%, transparent), color-mix(in srgb, var(--surface-alt) 78%, transparent));
+}
+
+.kpi-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.kpi-pill strong {
+  font-size: 0.96rem;
+}
+
 .hero-dashboard {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -341,6 +387,7 @@ h3 {
   border: 1px solid var(--line);
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--surface) 92%, transparent), color-mix(in srgb, var(--surface-alt) 74%, transparent));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32);
 }
 
 .dashboard-wide {
@@ -373,6 +420,7 @@ h3 {
   padding: 24px;
   background:
     radial-gradient(circle at top right, var(--secondary-soft), transparent 36%),
+    linear-gradient(180deg, transparent 0 78%, color-mix(in srgb, var(--accent-soft) 70%, transparent) 78% 100%),
     linear-gradient(180deg, color-mix(in srgb, var(--surface) 50%, transparent), transparent),
     var(--bg-strong);
   display: grid;
@@ -398,6 +446,17 @@ h3 {
   border: 1px solid var(--line);
   padding: 18px 16px;
   background: color-mix(in srgb, var(--surface-alt) 80%, transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+.score-grid article::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--secondary));
+  opacity: 0.8;
 }
 
 .score {
@@ -612,6 +671,10 @@ h3 {
 
   .dashboard-wide {
     grid-column: span 1;
+  }
+
+  .kpi-row {
+    flex-direction: column;
   }
 
   h1 {
