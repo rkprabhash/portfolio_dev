@@ -2,5 +2,8 @@
 
 Preview repository for the premium recruiter-facing portfolio refresh.
 
-Expected GitHub Pages URL:
+Development site:
 `https://rkprabhash.github.io/portfolio_dev/`
+
+Production site:
+`https://rkprabhash.github.io/Prabhash_portfolio/`
